@@ -13,6 +13,7 @@
     'depends': ['base', 'web'],
     'data': [
         'views/study.xml',
+        'views/study_menu.xml',
             ],
 
     'installable': True,

@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<odoo>
+<openerp>
     <data>
 
         <menuitem id="study_main_menu" parent="" sequence="0" name="Study Odoo Course"/>
 
-            <menuitem action="study_action"
-                      id="study_menu"
+            <menuitem id="study_menu"
                       parent="study_main_menu"
                       sequence="10"
-                      name="study_menu"
-                      string='Study First Module'/>
+                      name="Study Modules"/>
+                <menuitem action="study_action"
+                          id="study_first_menu"
+                          parent="study_menu"
+                          sequence="10"
+                          name="Study First Module"/>
     </data>
-</odoo>
+</openerp>
