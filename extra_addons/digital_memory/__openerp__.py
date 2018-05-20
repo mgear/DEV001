@@ -32,7 +32,7 @@
     # only loaded in demonstration mode
     'demo': [
         'demo.xml',
-        'views/digital_memory',
+        'views/digital_memory.xml',
     ],
 
     'installable': True,
