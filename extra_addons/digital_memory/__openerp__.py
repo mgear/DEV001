@@ -11,7 +11,8 @@
             - attendees registration
     """,
 
-    'author': "Simbioz",
+    'author': "Khlon Yuriy",
+    'maintainer': 'Simbioz Holding',
     'website': "http://www.simbioz.ua",
 
     # Categories can be used to filter modules in modules listing
@@ -31,5 +32,10 @@
     # only loaded in demonstration mode
     'demo': [
         'demo.xml',
+        'views/digital_memory',
     ],
+
+    'installable': True,
+    'auto_install': False,
+
 }
