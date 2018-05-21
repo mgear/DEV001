@@ -7,15 +7,6 @@
             <field name="model">digital_memory.course</field>
             <field name="arch" type="xml">
                 <form string="Digital Memory Form">
-                    <header>
-                        <button string="Confirm" type="object" name="action_confirm"
-                        states="draft" class="oe_highlight" />
-                        <button string="Mark as done" type="object" name="action_done"
-                        states="confirmed" class="oe_highlight"/>
-                        <button string="Reset to draft" type="object" name="action_draft"
-                        states="confirmed,done" />
-                            <field name="state" widget="statusbar"/>
-                    </header>
                         <sheet>
                             <div class="oe_title">
                                 <label for="name" class="oe_edit_only" string="Digital Memory Name" />
