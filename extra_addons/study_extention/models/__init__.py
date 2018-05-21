@@ -1,4 +1,4 @@
 # -*- coding: utf-8 -*-
 # Файл python должен начинаться с этой строки
 
-from . import models
+from . import study_ext
