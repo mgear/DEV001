@@ -1,29 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
 <openerp>
     <data>
+          <!--Представление создается как запись модели данных `` ir.ui.view``. -->
+          <!--Тип преставления назначается корневым элементом поля arch:  -->
+
+          <!--Представления в виде Form используются для создания и модификации единичных записей.  -->
           <record id="study_form" model="ir.ui.view">
                 <field name="name">study_form</field>
                 <field name="model">study.study</field>
                 <field name="arch" type="xml">
+                <!--Содержимое представления это XML.-->
+                <!--Таким образом, поле `` arch`` должно быть объявлено -->
+                <!--как type = "xml ",для того, чтобы его правильно распознал парсер.-->
+
                     <form string="First module">
+                    <!--Корневым элементом является <form>, который состоит из высокоуровневых элементов -->
+                    <!--(группы, поля для записей) и интерактивных элементов (кнопки и поля):    -->
+
                         <sheet>
-                            <field name="name"/>
+                            <group>
+                                <group>
+                                    <field name="name"/>
+                                    <field name="is_done"/>
+                                </group>
+                                <group>
+                                    <field name="start_date"/>
+                                    <field name="end_date"/>
+                                </group>
+
+                            </group>
                         </sheet>
                     </form>
                 </field>
           </record>
 
+          <!--Самая простая форма представления в виде tree это список всех полей таблицы, -->
+          <!--которые мы хотим показать на экране (каждое поле это колонка):-->
           <record id="study_list" model="ir.ui.view">
                     <field name="name">study_list</field>
                     <field name="model">study.study</field>
                     <field name="arch" type="xml">
                         <tree string="First">
+                        <!--Представления в виде Tree, также называются представлениями в виде списков, -->
+                        <!--отражают записи в табличной форме Их корневой элемент <tree>. -->
+
                             <field name="id"/>
                             <field name="name"/>
                         </tree>
                     </field>
           </record>
 
+          <!--Представления в виде Search настраивают поля search для связи с представлением -->
+          <!--в виде списка (а также другими совокупными представлениями). -->
+          <!--Их корневой элемент <search> и он состоит из полей определяющих какие поля могут участвовать в поиске:-->
           <record id="study_search" model="ir.ui.view">
                     <field name="name">study_search</field>
                     <field name="model">study.study</field>
@@ -33,11 +62,18 @@
                         </search>
                     </field>
           </record>
+          <!--Если для модели данных не существует поискового представления, -->
+          <!--Odoo генерирует одно, которое позволяет только поиск в поле `` name``.-->
 
           <record id="study_action" model="ir.actions.act_window">
                     <field name="name">Study First Module</field>
                     <field name="res_model">study.study</field>
                     <field name="view_mode">tree,form</field>
           </record>
+          <!--Действия могут быть инициированы тремя способами:-->
+            <!--нажатием на пункт меню (который связан с конкретным действием)-->
+            <!--нажатием на кнопки в формах представлений данных (если они связаны с конкретным действием)-->
+            <!--как контекстное действие над объектом-->
+
     </data>
 </openerp>
