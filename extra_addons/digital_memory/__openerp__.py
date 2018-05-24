@@ -25,12 +25,12 @@
     # always loaded
     'data': [
         # 'security/ir.model.access.csv',
+        'views/digital_memory.xml',
         'templates.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
         'demo.xml',
-        'views/digital_memory.xml',
     ],
 
     'installable': True,

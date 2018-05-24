@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "Digital Memory",
+    'name': "Digital Memory Ext",
 
     'summary': """Manage digital memory""",
 
@@ -20,17 +20,11 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base'],
+    'depends': ['digital_memory', 'mail'],
 
     # always loaded
     'data': [
-        # 'security/ir.model.access.csv',
-        'templates.xml',
-    ],
-    # only loaded in demonstration mode
-    'demo': [
-        'demo.xml',
-        'views/digital_memory.xml',
+        'views/digital_memory_ext.xml'
     ],
 
     'installable': True,

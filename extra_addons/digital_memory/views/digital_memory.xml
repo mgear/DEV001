@@ -3,14 +3,14 @@
     <data>
 
             <record model="ir.ui.view" id="course_form_view">
-                <field name="name">course.form</field>
+                <field name="name">course_form</field>
                 <field name="model">digital_memory.course</field>
                 <field name="arch" type="xml">
                     <form string="Digital Memory Form">
                             <sheet>
                                 <div class="oe_title">
                                     <label for="name" class="oe_edit_only" string="Digital Memory Name" />
-                                <h1><field name="name" /></h1>
+                                    <h1><field name="name"/></h1>
                                 </div>
                                 <field name="is_done"/>
                                 <separator string="General" colspan="2" />
@@ -23,7 +23,7 @@
             </record>
 
         <record model="ir.ui.view" id="course_list_view">
-            <field name="name">course.list</field>
+            <field name="name">course_list</field>
             <field name="model">digital_memory.course</field>
             <field name="arch" type="xml">
                 <tree>
@@ -34,7 +34,7 @@
         </record>
 
         <record model="ir.ui.view" id="course_search_view">
-            <field name="name">course.search</field>
+            <field name="name">course_search</field>
             <field name="model">digital_memory.course</field>
             <field name="arch" type="xml">
                 <search>
