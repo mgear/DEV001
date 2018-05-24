@@ -7,11 +7,11 @@
                 <field name="inherit_id" ref="study.study_form"/>
                 <field name="arch" type="xml">
 
-                     <!--<xpath expr="//sheet[1]" position="before">-->
-                          <!--<header>-->
-                              <!--<field name="state" widget="statusbar" clickable="True"/>-->
-                          <!--</header>-->
-                     <!--</xpath>-->
+                     <xpath expr="//sheet[1]" position="before">
+                          <header>
+                              <field name="state" widget="statusbar" clickable="True"/>
+                          </header>
+                     </xpath>
 
                      <xpath expr="//field[@name='is_done']" position="attributes">
                           <attribute name="invisible">1</attribute>
@@ -22,27 +22,34 @@
                      </field>
 
                      <xpath expr="//group[1]" position="after">
-                         <!--<notebook>-->
-                             <!--<page string="Description">-->
+                         <notebook>
+                             <page string="Description">
                                  <field name="description"/>
-                             <!--</page>-->
-                             <!--<page string="Students list">-->
-                                 <!--<field name="students_ids" readonly="1"/>-->
-                             <!--</page>-->
-                         <!--</notebook>-->
-
+                             </page>
+                             <page string="Students list">
+                                 <field name="students_ids" readonly="1"/>
+                             </page>
+                         </notebook>
                      </xpath>
 
-                     <!--<xpath expr="//group[1]" position="before">-->
-                             <!--<div class="oe_button_box" name="buttons">-->
-                                     <!--<button class="oe_stat_button"-->
-                                             <!--type="object"-->
-                                             <!--name=""-->
-                                             <!--icon="fa-users">-->
-                                         <!--<field name="stud_count" widget="statinfo" string="students"/>-->
-                                     <!--</button>-->
-                             <!--</div>-->
-                     <!--</xpath>-->
+                     <xpath expr="//group[1]" position="before">
+                             <div class="oe_button_box" name="buttons">
+                                     <button class="oe_stat_button"
+                                             type="object"
+                                             name=""
+                                             icon="fa-users">
+                                         <field name="stud_count" widget="statinfo" string="students"/>
+                                     </button>
+                             </div>
+                     </xpath>
+
+                     <xpath expr="//sheet[1]" position="after">
+                          <div class="oe_chatter">
+                            <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+                            <field name="message_ids" widget="mail_thread"/>
+                          </div>
+                     </xpath>
+
 
                 </field>
           </record>
@@ -67,16 +74,16 @@
                 <!--</field>-->
           <!--</record>-->
 
-          <!--<record id="student_action" model="ir.actions.act_window">-->
-                    <!--<field name="name">Student List</field>-->
-                    <!--<field name="res_model">res.partner</field>-->
-                    <!--<field name="view_mode">tree,form</field>-->
-          <!--</record>-->
+          <record id="student_action" model="ir.actions.act_window">
+                    <field name="name">Student List</field>
+                    <field name="res_model">res.partner</field>
+                    <field name="view_mode">tree,form</field>
+          </record>
 
-          <!--<menuitem action="student_action"-->
-                    <!--id="students_menu"-->
-                    <!--parent="study.study_menu"-->
-                    <!--sequence="10"-->
-                    <!--name="Students"/>-->
+          <menuitem action="student_action"
+                    id="students_menu"
+                    parent="study.study_menu"
+                    sequence="10"
+                    name="Students"/>
     </data>
 </openerp>
